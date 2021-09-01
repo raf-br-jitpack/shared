@@ -65,7 +65,8 @@ kotlin {
                     implementation("co.touchlab:stately-iso-collections:$version")
                 }
 
-                api("com.github.raf-br-jitpack.model:model:25e11e6a1f")
+                //api("com.github.raf-br-jitpack.model:model:25e11e6a1f")
+                api("com.example:model:0.0.1")
             }
         }
         val commonTest by getting {

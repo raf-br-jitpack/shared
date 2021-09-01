@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedKoin_coreModule, SharedSharedComponents, SharedKoin_coreKoinApplication, SharedKotlinArray<T>, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreScope, SharedKoin_coreDefinitionParameters, SharedKoin_coreOptions, SharedKoin_coreScopeDSL, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreKind, SharedKoin_coreProperties, SharedKoin_coreCallbacks<T>, SharedKoin_coreScopeDefinition, SharedKotlinLazyThreadSafetyMode, SharedKotlinEnum<E>, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry;
+@class SharedModelThing, SharedKoin_coreModule, SharedSharedComponents, SharedKoin_coreKoinApplication, SharedKotlinArray<T>, SharedKoin_coreBeanDefinition<T>, SharedKoin_coreScope, SharedKoin_coreDefinitionParameters, SharedKoin_coreOptions, SharedKoin_coreScopeDSL, SharedKoin_coreLogger, SharedKoin_coreLevel, SharedKoin_coreKoin, SharedKoin_coreKind, SharedKoin_coreProperties, SharedKoin_coreCallbacks<T>, SharedKoin_coreScopeDefinition, SharedKotlinLazyThreadSafetyMode, SharedKotlinEnum<E>, SharedKoin_corePropertyRegistry, SharedKoin_coreScopeRegistry;
 
 @protocol SharedKoin_coreQualifier, SharedKotlinIterator, SharedKotlinKClass, SharedKotlinLazy, SharedKoin_coreScopeCallback, SharedKotlinComparable, SharedKoin_coreKoinScopeComponent, SharedKotlinKDeclarationContainer, SharedKotlinKAnnotatedElement, SharedKotlinKClassifier, SharedKoin_coreKoinComponent;
 
@@ -141,8 +141,8 @@ __attribute__((swift_name("KotlinBoolean")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SharedComponents")))
 @interface SharedSharedComponents : SharedBase
-- (instancetype)initWithThing:(NSString *)thing __attribute__((swift_name("init(thing:)"))) __attribute__((objc_designated_initializer));
-@property (readonly) NSString *thing __attribute__((swift_name("thing")));
+- (instancetype)initWithThing:(SharedModelThing *)thing __attribute__((swift_name("init(thing:)"))) __attribute__((objc_designated_initializer));
+@property (readonly) SharedModelThing *thing __attribute__((swift_name("thing")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -162,6 +162,18 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SharedKt")))
 @interface SharedSharedKt : SharedBase
 + (SharedKoin_coreKoinApplication *)initializeModules:(SharedKotlinArray<SharedKoin_coreModule *> *)modules init:(void (^ _Nullable)(SharedKoin_coreKoinApplication *))init __attribute__((swift_name("initialize(modules:init:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ModelThing")))
+@interface SharedModelThing : SharedBase
+- (instancetype)initWithName:(NSString *)name __attribute__((swift_name("init(name:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (SharedModelThing *)doCopyName:(NSString *)name __attribute__((swift_name("doCopy(name:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *name __attribute__((swift_name("name")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
