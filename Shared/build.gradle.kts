@@ -64,6 +64,8 @@ kotlin {
                     implementation("co.touchlab:stately-concurrency:$version")
                     implementation("co.touchlab:stately-iso-collections:$version")
                 }
+
+                api("com.github.raf-br-jitpack.model:model:25e11e6a1f")
             }
         }
         val commonTest by getting {
