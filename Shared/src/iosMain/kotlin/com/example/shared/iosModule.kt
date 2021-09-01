@@ -1,5 +1,6 @@
 package com.example.shared
 
+import com.example.model.Thing
 import org.koin.dsl.module
 
 val iosModule = module {
@@ -12,7 +13,7 @@ val iosModule = module {
 }
 
 class SharedComponents(
-    val thing: String,
+    val thing: Thing,
 )
 
 fun iOSInit() = initialize(iosModule).koin.get<SharedComponents>()

@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.model.Thing
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 class MainActivity : AppCompatActivity(), KoinComponent {
-    private val thing: String by inject()
+    private val thing: Thing by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
